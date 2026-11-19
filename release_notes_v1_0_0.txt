@@ -1,0 +1,35 @@
+# preference_choice_mixed_models v1.0.0 - Initial Release
+
+This is the first stable release of preference_choice_mixed_models, MATLAB scripts for analyzing the association between ADHD traits and preference-choice consistency in everyday item selection using trial-level mixed-effects models.
+
+## Core Features
+- Participant-level summary: Computes consistency, actual rating difference, response time and number of analysed trials for each distance condition, together with within-category and between-category SDs of the preference ratings
+- Trial-level GLMMs: Tests the association between ADHD traits (ASRS) and preference-choice consistency, and its interaction with preference distance (Models 1-3)
+- Sensitivity analyses: Adds sex (Model 4) or BIS, BAS and SSS-AE scores (Model 5) as covariates
+- LMMs: Tests the association of ADHD traits with the actual rating difference and log response time
+- Likelihood-ratio tests: Tests fixed effects by comparing the full model with a model omitting the tested term(s)
+
+## Script Components
+- summarize_participants.m: Participant-level summary
+- fit_mixed_models.m: Mixed-effects models
+
+## Technical Specifications
+- Requires MATLAB R2017b or later and the Statistics and Machine Learning Toolbox
+- 72 choice trials per participant (24 far-distance, 24 medium-distance and 24 near-distance pairs)
+- Trials with tied ratings are excluded
+- GLMM: binomial distribution, logit link, Laplace approximation
+- LMM: maximum likelihood
+- Distance effects-coded; questionnaire scores z-standardized across participants
+- Random effects: by-participant intercepts and slopes, by-category intercepts
+- Coefficients reported with Wald 95% confidence intervals
+- No external functions required
+
+## Documentation
+- Complete documentation available in README
+- Detailed parameter settings in the scripts
+- Input/output file specifications included
+
+## License
+Released under MIT License
+
+Note: This software is currently associated with a paper under review.
